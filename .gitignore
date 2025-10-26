@@ -10,3 +10,13 @@ NIL-fork/example_java_dataset
 NIL-fork/example_python_dataset
 NIL-fork/example_cpp_dataset
 NIL-fork/*.csv
+CCSTokener-fork/original/
+CCSTokener-fork/tokens_main_*/
+CCSTokener-fork/tokens_query_*/
+CCSTokener-fork/tokens_original
+CCSTokener-fork/script.py
+CCSTokener-fork/k_index.txt
+CCSTokener-fork/temp_dataset
+CCSTokener-fork/report*/
+CCSTokener-fork/statistics
+CCSTokener-fork/original_results*
