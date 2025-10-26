@@ -1,0 +1,33 @@
+#!/bin/bash
+
+ulimit -s hard
+
+# Очистка рабочих директорий
+rm -rf input/*
+rm -rf output/*
+# due to large num of files, 'rm -rf token/*' doesn't work
+cd token
+find ./ -type f -delete
+cd ..
+rm function.file > /dev/null  # 2> /dev/null
+rm tokenline_num > /dev/null  # 2> /dev/null
+rm clones > /dev/null  # 2> /dev/null 
+# compile
+cd txl
+chmod +x *.x
+cd ..
+cd lexical
+make clean > /dev/null  # 2> /dev/null
+make > /dev/null  # 2> /dev/null
+cd ..
+
+# Используем переменные окружения
+echo "Using language: $LANGUAGE"
+echo "Processing dataset: $DATASET_PATH"
+
+# Этап extract с динамическими параметрами
+./extract ./txl "$LANGUAGE" functions "$DATASET_PATH" ./input 8 > /dev/null
+./parser ./input ./ 5 > /dev/null
+./tokenize ./function.file ./token ./ 8 > /dev/null
+./detect ./token ./output ./function.file $WINDOW_SIZE $EDIT_DISTANCE $SIMILARITY_THRESHOLD > /dev/null
+./co1 ./output ./ > /dev/null

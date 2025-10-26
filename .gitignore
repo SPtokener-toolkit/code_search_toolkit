@@ -20,3 +20,5 @@ CCSTokener-fork/temp_dataset
 CCSTokener-fork/report*/
 CCSTokener-fork/statistics
 CCSTokener-fork/original_results*
+code_search_toolkit/datasets/
+code_search_toolkit/results/
