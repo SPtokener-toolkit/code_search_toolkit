@@ -1,2 +1,12 @@
 __pycache__
 .DS_Store
+.gradle
+.idea
+NIL-fork/build
+NIL-fork/clone_pairs
+NIL-fork/code_blocks
+NIL-fork/result_*.csv
+NIL-fork/example_java_dataset
+NIL-fork/example_python_dataset
+NIL-fork/example_cpp_dataset
+NIL-fork/*.csv
